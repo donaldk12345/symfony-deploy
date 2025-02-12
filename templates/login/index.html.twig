@@ -1,0 +1,191 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LoginController!{% endblock %}
+
+{% block body %}
+<style>
+  
+  .authentication-wrapper {
+  display: flex;
+  flex-basis: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.form-control{
+    border-color:none;
+}
+.authentication-wrapper .authentication-inner {
+  width: 100%;
+}
+.authentication-wrapper.authentication-basic {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.authentication-wrapper.authentication-cover {
+  align-items: flex-start;
+}
+.authentication-wrapper.authentication-cover .authentication-inner {
+  height: 100vh;
+}
+.authentication-wrapper.authentication-basic .authentication-inner {
+  max-width: 400px;
+  position: relative;
+}
+.authentication-wrapper.authentication-basic .authentication-inner:before {
+  width: 148px;
+  height: 148px;
+  content: " ";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  
+}
+.authentication-wrapper.authentication-basic .authentication-inner:after {
+  width: 243px;
+  height: 240px;
+  content: " ";
+  position: absolute;
+  bottom: -68px;
+  left: -46px;
+}
+.authentication-wrapper.authentication-basic .authentication-inner .card {
+  z-index: 1;
+}
+.authentication-wrapper.authentication-basic .authentication-inner .card .app-brand {
+  margin-bottom: 2.5rem;
+}
+.authentication-wrapper .auth-input-wrapper .auth-input {
+  max-width: 50px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-size: 150%;
+}
+
+@media (max-width: 575.98px) {
+  .authentication-wrapper .auth-input-wrapper .auth-input {
+    font-size: 1.125rem;
+  }
+}
+.light-style .authentication-wrapper .authentication-bg {
+  background-color: #fff;
+}
+
+.card{
+    background-color:#fff;
+    border-radius:10px;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 6px 0 rgb(67 89 113 / 12%);
+}   
+
+.add-cart-btn {
+ background: #206dfb;
+ padding: 7px 15px;
+ color: white;
+ font-weight: 700;
+ text-transform: uppercase;
+ font-size: 14px;
+text-decoration: none;
+border: none;
+                      }
+                      
+.add-cart-btn a {
+ text-decoration: none;
+ color: #fff; }
+.add-cart-btn a:hover {
+ text-decoration: none;
+ color: #fff;
+ }
+                      
+.add-cart-btn:hover {
+background:rgba(32, 109, 251, 0.83);
+color: white;
+}
+</style>
+
+    <div class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-12 ftco-animate text-center mb-5">
+            <h1 class="mb-3 bread">Connexion</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <div class="container-xxl mt-2" >
+      <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+          <!-- Register -->
+          <div class="card ">
+            <div class="card-body">
+              <!-- Logo -->
+     
+              <!-- /Logo -->
+              <h4 class="mb-2 text-center">Authentification👋</h4>
+              <p class="mb-4 text-center">s'il vous plait veillez vous connecter afin de bénéficier de nos services</p>
+
+              <form id="formAuthentication" class="mb-3" action=" {{ path('app_login') }} " method="post">
+                {% if hasError %}
+                            
+         <div class="alert alert-danger text-center  animate__animated animate__fadeInUp" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+L'email ou le mot de passe saisir est incorrect !
+</div>
+
+                             </div>
+                            
+                            {% endif %}
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="_username"  required=""
+                    placeholder="Entrez votre email"
+                    autofocus
+                  />
+                </div>
+                <div class="mb-3 form-password-toggle">
+                  <div class="d-flex justify-content-between">
+                    <label class="form-label" for="password">Mot de passe</label>
+                    <a href=" ">
+                      <small>Mot de passe oublier?</small>
+                    </a>
+                  </div>
+                  <div class="input-group input-group-merge">
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control"
+                       name="_password" required=""
+                      placeholder="Entrez votre mot de passe"
+                      aria-describedby="password"
+                    />
+                  
+                  </div>
+                </div>
+             
+                <div class="mb-3">
+                  <button class="add-cart-btn d-grid w-100" type="submit">Je me connecte</button>
+                </div>
+              </form>
+
+            <p class="text-center">
+                <span>Nouveau sur le site ?</span>
+                <a href="{{ path('app_registration') }}">
+                  <span>Créer un compte</span>
+                </a>
+              </p>
+            </div>
+          </div>
+          <!-- /Register -->
+        </div>
+      </div>
+    </div>
+
+    
+{% endblock %}

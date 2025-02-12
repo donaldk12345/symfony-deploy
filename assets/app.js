@@ -8,3 +8,10 @@ import './bootstrap.js';
 import './styles/app.css';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+import $ from 'jquery';
+global.$ = $;
+/*import './js/jquery.min.js';
+import './js/bootstrap.min.js';
+import './js/owl.carousel.min.js';
+import './js/bootsnav.js';
+import './js/main.js';*/

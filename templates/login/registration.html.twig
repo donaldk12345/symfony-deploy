@@ -1,0 +1,170 @@
+{% extends "base.html.twig" %}
+{% block title %}YnoShop{% endblock %}
+    
+ {% block body %}
+     <style>
+         
+form-control:focus {
+    color: #36434d!important;
+    background-color: #f7f8fc!important;
+    border-color:#e0e7ed !important;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+    outline: 0;
+}
+.form-control:disabled, .form-control[readonly]
+{
+    background-color: #fff;
+    opacity: 1; }
+.form-control{
+    border-color:#e0e7ed!important;
+    outline: none!important;
+    background-color:#f7f8fc;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+    margin-top:10px;
+  
+
+}
+
+a{
+    color:var(--salmon-pink);
+    text-decoration:none;
+}
+a:hover{
+     color:var(--salmon-pink);
+}
+@charset "UTF-8";
+.authentication-wrapper {
+  display: flex;
+  flex-basis: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
+.authentication-wrapper .authentication-inner {
+  width: 100%;
+}
+.authentication-wrapper.authentication-basic {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.authentication-wrapper.authentication-cover {
+  align-items: flex-start;
+}
+.authentication-wrapper.authentication-cover .authentication-inner {
+  height: 100vh;
+}
+.authentication-wrapper.authentication-basic .authentication-inner {
+  max-width: 400px;
+  position: relative;
+}
+.authentication-wrapper.authentication-basic .authentication-inner:before {
+  width: 148px;
+  height: 148px;
+  content: " ";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  
+}
+.authentication-wrapper.authentication-basic .authentication-inner:after {
+  width: 243px;
+  height: 240px;
+  content: " ";
+  position: absolute;
+  bottom: -68px;
+  left: -46px;
+}
+.authentication-wrapper.authentication-basic .authentication-inner .card {
+  z-index: 1;
+  margin-top:50px;
+}
+.authentication-wrapper.authentication-basic .authentication-inner .card .app-brand {
+  margin-bottom: 2.5rem;
+}
+.authentication-wrapper .auth-input-wrapper .auth-input {
+  max-width: 50px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-size: 150%;
+}
+
+@media (max-width: 575.98px) {
+  .authentication-wrapper .auth-input-wrapper .auth-input {
+    font-size: 1.125rem;
+  }
+}
+.light-style .authentication-wrapper .authentication-bg {
+  background-color: #fff;
+}
+
+.card{
+    background-color:#fff;
+    border-radius:10px;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 6px 0 rgb(67 89 113 / 12%);
+}    
+
+.add-cart-btn {
+ background: #206dfb;
+ padding: 7px 15px;
+ color: white;
+ font-weight: 700;
+ text-transform: uppercase;
+ font-size: 14px;
+text-decoration: none;
+border: none;
+                      }
+                      
+.add-cart-btn a {
+ text-decoration: none;
+ color: #fff; }
+.add-cart-btn a:hover {
+ text-decoration: none;
+ color: #fff;
+ }
+                      
+.add-cart-btn:hover {
+background:rgba(32, 109, 251, 0.83);
+color: white;
+}
+</style>
+    <div class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-12 ftco-animate text-center mb-5">
+            <h1 class="mb-3 bread">Inscription</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <div class="container-xxl  mb-4" >
+      <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+          <!-- Register Card -->
+          <div class="card">
+            <div class="card-body">
+              <!-- Logo -->
+                <h4 class="mb-2 text-center">S'enregistrer</h4>
+              <p class="mb-4 text-center">s'il vous plait veuillez vous inscrire afin de bénéficier de nos services</p>
+
+                {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                
+                </div>
+                    <p class="text-center">
+                    <button type="submit" class="add-cart-btn col-md-11 m-auto" >Je m'inscrire</button>
+                 
+              </p>
+                    {{ form_end(form) }}
+
+            </div>
+          </div>
+          <!-- Register Card -->
+        </div>
+      </div>
+    </div>
+ {% endblock %}
